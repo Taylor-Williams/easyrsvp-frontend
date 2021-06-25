@@ -1,6 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import fetchVenues from './actions/fetchVenues'
 import VenuesContainer from './containers/VenuesContainer'
 
 class App extends React.Component {
@@ -14,10 +12,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    venues: state.venues
-  }
-}
-
-export default connect(mapStateToProps, {fetchVenues})(App);
+export default App;
