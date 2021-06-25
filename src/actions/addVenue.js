@@ -8,6 +8,7 @@ export const addVenue = (data) => {
             },
             method: 'POST',
             body: JSON.stringify(data)
-        })
+        }).then(res => res.json())
+        .then(venue => dispatch({type: 'ADD_VENUE', payload: venue}))
     }
 }
