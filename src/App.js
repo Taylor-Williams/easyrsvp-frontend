@@ -1,19 +1,23 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import fetchVenues from './actions/fetchVenues'
+import VenuesContainer from './containers/VenuesContainer'
 
 class App extends React.Component {
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/venues')
-    .then(response => response.json())
-    .then(data => console.log(data))
-  }
   render() {
     return (
       <div className='App'> 
-        App
+        <VenuesContainer />
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    venues: state.venues
+  }
+}
+
+export default connect(mapStateToProps, {fetchVenues})(App);
