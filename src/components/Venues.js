@@ -4,7 +4,6 @@ const Venues = (props) => {
 
     return (
         <div className='venueList'>
-            hi
             {console.log(props.venues)}          
             {props.venues.map( venue => {
                 return(
