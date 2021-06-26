@@ -15,7 +15,7 @@ class VenueInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addVenue(this.state)
-        this.setState(state = {name: '', location: '', occupancy: ''})
+        this.setState({name: '', location: '', occupancy: ''})
     }
 
     render() {

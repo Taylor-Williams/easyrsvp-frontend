@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
 
 const Venues = (props) => {
 
@@ -8,7 +9,7 @@ const Venues = (props) => {
             {props.venues.map( venue => {
                 return(
                     <div className='venueId-{venue.id}' key={venue.id}>
-                        <Venue props={venue}/>
+                        <Link to={`/venues/${venue.id}`}>{venue.name}</Link>
                     </div>
                 )
             })}

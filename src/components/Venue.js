@@ -1,13 +1,17 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 const Venue = (props) => {
 
+    let venue = props.venues[props.match.params.id - 1]
+
     return(
-        <li>
-            <li className='venueName'>{props.name}</li>
-            <li className='venueLocation'>{props.location}</li>
-            <li className='venueOccupancy'>occupany: {props.occupancy}</li>
-        </li>
+        <ul>
+            {/* {venue ? null : <Redirect to='/venues'/>} */}
+            {venue ? <li className='venueName'>{venue.name}</li> : null}
+            {venue ? <li className='venueLocation'>{venue.location}</li> : null}
+            {venue ? <li className='venueOccupancy'>occupany: {venue.occupancy}</li> : null}
+        </ul>
     )
 }
 export default Venue
