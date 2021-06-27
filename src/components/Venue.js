@@ -5,6 +5,11 @@ import ReservationsContainer from '../containers/ReservationsContainer'
 const Venue = (props) => {
 
     let venue = props.venues.filter(venue => venue.id == props.match.params.id)[0]
+
+    const handleDelete = (venue) => {
+        console.log(venue, venue.id, venue.venue_id)
+        props.deleteVenue(venue.id)
+    }
     return(
         <div>
             <ul>
@@ -14,6 +19,7 @@ const Venue = (props) => {
                 {venue && <li className='venueLocation'>location: {venue.location}</li>}
                 {venue && <li className='venueOccupancy'>occupancy: {venue.occupancy}</li>}
                 {venue && <li className='venueOccupancy'>contact: {venue.occupancy}</li>}
+                <button onClick={() => handleDelete(venue)}>Delete Venue</button>
             </ul>
             <ReservationsContainer venue={venue}/>
         </div>
