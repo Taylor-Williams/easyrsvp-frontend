@@ -9,9 +9,11 @@ const Venue = (props) => {
         <div>
             <ul>
                 {/* {venue ? null : <Redirect to='/venues'/>} */}
-                {venue && <li className='venueName'>{venue.name}</li>}
-                {venue && <li className='venueLocation'>{venue.location}</li>}
+                {venue && <li className='venueName'>event name: {venue.name}</li>}
+                {venue && <li className='venueOccupancy'>date: {venue.display_date}</li>}
+                {venue && <li className='venueLocation'>location: {venue.location}</li>}
                 {venue && <li className='venueOccupancy'>occupancy: {venue.occupancy}</li>}
+                {venue && <li className='venueOccupancy'>contact: {venue.occupancy}</li>}
             </ul>
             <ReservationsContainer venue={venue}/>
         </div>
