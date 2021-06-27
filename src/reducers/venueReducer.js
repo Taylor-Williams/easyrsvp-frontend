@@ -4,6 +4,8 @@ export default function venueReducer(state= { venues: [] }, action) {
             return {venues: action.payload}
         case 'ADD_VENUE' :
             return {...state, venues: [...state.venues, action.payload]}
+        case 'DELETE_VENUE' :
+            return {...state, state.venues.filter((venue) => venue.id != action.payload)}
         case 'ADD_RESERVATION' :
             {/* iterate to changed venue, make payload that venues attribute */}
             let changedVenue = state.venues.map( venue => {
@@ -16,14 +18,14 @@ export default function venueReducer(state= { venues: [] }, action) {
             return {...state, venues: changedVenue}
         case 'DELETE_RESERVATION' :
             {/* iterate to changed venue, make payload that venues' attribute */}
-            let deletedVenue = state.venues.map( venue => {
+            let deletedVenueReservation = state.venues.map( venue => {
                 if (venue.id === action.payload.id) {
                     return action.payload
                 } else {
                     return venue
                 }
             })
-            return {...state, venues: deletedVenue}
+            return {...state, venues: deletedVenueReservation}
         default:
             return state
     }
