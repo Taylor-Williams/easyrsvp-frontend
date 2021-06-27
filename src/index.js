@@ -7,6 +7,7 @@ import App from './App'
 import {BrowserRouter as Router} from 'react-router-dom' 
 import venueReducer from './reducers/venueReducer'
 import 'bootswatch/dist/darkly/bootstrap.min.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

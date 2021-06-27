@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker"
 
 class VenueInput extends React.Component {
 
-    state = {name: '', location: '', occupancy: '', date:''}
+    state = {name: '', location: '', occupancy: '', date:'', contact: ''}
 
     handleChange = (event) => {
         this.setState({
@@ -24,10 +24,15 @@ class VenueInput extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>What is the name of your event?</label>
-                    <input type='text' placeholder='Venue Name' name='name' value={this.state.name} onChange={this.handleChange} />
+                    <input type='text' placeholder='Event Name' name='name' value={this.state.name} onChange={this.handleChange} />
                     <br/>
                     <label>What day is it being hosted?</label>
-                    <DatePicker selected={this.state.date} onChange={(pickedDate) => this.setState({...this.state, date:pickedDate})} />
+                    <DatePicker selected={this.state.date}
+                        showTimeSelect dateFormat="MMMM d, yyyy h:mm aa"
+                        placeholderText='Date of Event'
+                        timeFormat="HH:mm"
+                        onChange={(pickedDate) => this.setState({...this.state, date:pickedDate})}
+                    />
                     <br />
                     <label>What is the address of your venue?</label>
                     <input type='text' placeholder='Address' name='location' value={this.state.location} onChange={this.handleChange} />
