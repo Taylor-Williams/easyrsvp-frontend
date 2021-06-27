@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import App from './App'
 import {BrowserRouter as Router} from 'react-router-dom' 
 import venueReducer from './reducers/venueReducer'
+import 'bootswatch/dist/darkly/bootstrap.min.css'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 

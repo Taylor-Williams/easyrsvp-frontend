@@ -9,6 +9,12 @@ export const addVenue = (data) => {
             method: 'POST',
             body: JSON.stringify(data)
         }).then(res => res.json())
-        .then(venue => dispatch({type: 'ADD_VENUE', payload: venue}))
+        .then(venue => {
+            if (venue.error) {
+                alert(venue.error)
+            } else {
+                dispatch({type: 'ADD_VENUE', payload: venue})
+            }
+        })
     }
 }

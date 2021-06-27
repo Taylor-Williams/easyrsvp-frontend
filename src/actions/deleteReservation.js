@@ -9,7 +9,12 @@ export const deleteReservation = (reservationId, venueId) => {
                }
         })
         .then(response => response.json())
-        .then(venue => dispatch({type: 'DELETE_RESERVATION', payload: venue}))
-        .catch(err => console.log(err))
+        .then(venue => {
+            if (venue.error) {
+                alert(venue.error)
+            } else {
+                dispatch({type: 'DELETE_RESERVATION', payload: venue})
+            }
+        })
     }
 }
