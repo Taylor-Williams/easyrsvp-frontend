@@ -8,7 +8,6 @@ class ReservationsInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-
         this.props.addReservation(this.state, this.props.venue.id)
         this.setState({res_name: '', phone_number: ''})
     }
