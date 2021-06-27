@@ -1,6 +1,6 @@
-export const addReservation = (data) => {
+export const addReservation = (data, venueId) => {
     return(dispatch) => {
-        fetch('http://localhost:3000/api/v1/reservations', {
+        fetch(`http://localhost:3000/api/v1/reservations/${venueId}/reservations`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
@@ -9,6 +9,6 @@ export const addReservation = (data) => {
             method: 'POST',
             body: JSON.stringify(data)
         }).then(res => res.json())
-        .then(venue => dispatch({type: 'ADD_RESERVATION', payload: venue}))
+        .then(venue => dispatch({type: 'ADD_RESERVATION', payload: reservation}))
     }
 }

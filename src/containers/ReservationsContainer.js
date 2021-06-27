@@ -7,7 +7,7 @@ class ReservationsContainer extends React.Component {
     render() {
         return (
             <div>
-                <ReservationsInput />
+                <ReservationsInput venue={this.props.venue}/>
                 <Reservations reservations={this.props.venue && this.props.venue.reservations}/>
             </div>
         )
