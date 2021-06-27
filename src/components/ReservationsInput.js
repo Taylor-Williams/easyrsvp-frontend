@@ -8,7 +8,8 @@ class ReservationsInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addReservation(this.state, this.state.venue.id)
+
+        this.props.addReservation(this.state, this.props.venue.id)
         this.setState({res_name: '', phone_number: ''})
     }
 
@@ -26,7 +27,7 @@ class ReservationsInput extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>What is your name?</label>
                     <br/>
-                    <input type='text' palceholder='name' name='res_name' value={this.state.name} onChange={this.handleChange}></input>
+                    <input type='text' palceholder='name' name='res_name' value={this.state.res_name} onChange={this.handleChange}></input>
                     <br/>
                     <label>Would you like to provide your phone number?</label>
                     <br/>

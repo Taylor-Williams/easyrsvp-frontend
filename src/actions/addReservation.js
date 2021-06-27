@@ -1,6 +1,6 @@
 export const addReservation = (data, venueId) => {
     return(dispatch) => {
-        fetch(`http://localhost:3000/api/v1/reservations/${venueId}/reservations`, {
+        fetch(`http://localhost:3000/api/v1/venues/${venueId}/reservations`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
