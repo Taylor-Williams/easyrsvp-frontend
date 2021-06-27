@@ -1,8 +1,6 @@
 import React from 'react'
 import ReservationsInput from '../components/ReservationsInput'
 import Reservations from '../components/Reservations'
-import Venue from '../components/Venue'
-import Venues from '../components/Venues'
 
 class ReservationsContainer extends React.Component {
 
