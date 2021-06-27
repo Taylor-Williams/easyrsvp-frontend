@@ -28,6 +28,7 @@ class ReservationsInput extends React.Component {
                     <label>Would you like to provide your phone number?</label>
                     <br/>
                     <input type='text' palceholder='phone number' name='phone_number' value={this.state.phone_number} onChange={this.handleChange}></input>
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         )
