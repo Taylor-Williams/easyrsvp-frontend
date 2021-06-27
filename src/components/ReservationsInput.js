@@ -25,6 +25,7 @@ class ReservationsInput extends React.Component {
                     <label>What is your name?</label>
                     <br/>
                     <input type='text' palceholder='name' name='res_name' value={this.state.name} onChange={this.handleChange}></input>
+                    <br/>
                     <label>Would you like to provide your phone number?</label>
                     <br/>
                     <input type='text' palceholder='phone number' name='phone_number' value={this.state.phone_number} onChange={this.handleChange}></input>
