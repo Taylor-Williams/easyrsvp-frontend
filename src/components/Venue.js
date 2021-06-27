@@ -4,8 +4,7 @@ import ReservationsContainer from '../containers/ReservationsContainer'
 
 const Venue = (props) => {
 
-    let venue = props.venues[props.match.params.id - 1]
-    {/*TODO: ADD LOGIC TO GET CORRECT VENUE IF ID != ARRAY POSITION*/}
+    let venue = props.venues.filter(venue => venue.id == props.match.params.id)[0]
     return(
         <div>
             <ul>
