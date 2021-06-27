@@ -5,7 +5,8 @@ export default function venueReducer(state= { venues: [] }, action) {
         case 'ADD_VENUE' :
             return {...state, venues: [...state.venues, action.payload]}
         case 'DELETE_VENUE' :
-            return {...state, state.venues.filter((venue) => venue.id != action.payload)}
+            let deletedVenueState = state.venues.filter((venue) => venue.id != action.payload)
+            return {...state, venues: deletedVenueState}
         case 'ADD_RESERVATION' :
             {/* iterate to changed venue, make payload that venues attribute */}
             let changedVenue = state.venues.map( venue => {

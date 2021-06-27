@@ -1,6 +1,8 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import ReservationsContainer from '../containers/ReservationsContainer'
+import {deleteVenue} from '../actions/deleteVenue'
+import {connect} from 'react-redux'
 
 const Venue = (props) => {
 
@@ -25,4 +27,4 @@ const Venue = (props) => {
         </div>
     )
 }
-export default Venue
+export default connect(null, {deleteVenue})(Venue)

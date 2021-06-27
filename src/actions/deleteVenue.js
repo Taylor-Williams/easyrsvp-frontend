@@ -13,7 +13,7 @@ export const deleteVenue = (venueId) => {
             if (venue.error) {
                 alert(venue.error)
             } else {
-                dispatch({type: 'DELETE_VENUE', payload: venue.id})
+                dispatch({type: 'DELETE_VENUE', payload: venueId})
             }
         })
     }
