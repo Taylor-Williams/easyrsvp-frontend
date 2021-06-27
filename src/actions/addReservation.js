@@ -9,6 +9,6 @@ export const addReservation = (data, venueId) => {
             method: 'POST',
             body: JSON.stringify(data)
         }).then(res => res.json())
-        .then(venue => dispatch({type: 'ADD_RESERVATION', payload: reservation}))
+        .then(reservation => dispatch({type: 'ADD_RESERVATION', payload: reservation}))
     }
 }
