@@ -1,17 +1,19 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 import ReservationsContainer from '../containers/ReservationsContainer'
 import {deleteVenue} from '../actions/deleteVenue'
+import {useHistory} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 const Venue = (props) => {
 
     let venue = props.venues.filter(venue => venue.id == props.match.params.id)[0]
+    let history = useHistory()
 
     const handleDelete = (venue) => {
-        console.log(venue, venue.id, venue.venue_id)
         props.deleteVenue(venue.id)
+        history.push("/venues")
     }
+
     return(
         <div>
             <ul>

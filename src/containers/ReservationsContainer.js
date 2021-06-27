@@ -8,7 +8,7 @@ class ReservationsContainer extends React.Component {
         return (
             <div>
                 <ReservationsInput venue={this.props.venue}/>
-                <Reservations reservations={this.props.venue && this.props.venue.reservations}/>
+                <Reservations reservations={this.props.venue && this.props.venue, this.props.venue.reservations}/>
             </div>
         )
     }
