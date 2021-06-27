@@ -4,10 +4,12 @@ import {addReservation} from '../actions/addReservation'
 
 class ReservationsInput extends React.Component {
 
-    state = {res_name: '', phone_number: '', venue_id: ''}
+    state = {res_name: '', phone_number: ''}
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.props.addReservation(this.state, this.state.venue.id)
+        this.setState({res_name: '', phone_number: ''})
     }
 
     handleChange = (event) => {
