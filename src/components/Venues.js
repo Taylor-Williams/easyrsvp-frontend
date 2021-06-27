@@ -4,8 +4,7 @@ import { Route, Link } from 'react-router-dom'
 const Venues = (props) => {
 
     return (
-        <div className='venueList'>
-            {console.log(props.venues)}          
+        <div className='venueList'>         
             {props.venues.map( venue => {
                 return(
                     <div className='venueId-{venue.id}' key={venue.id}>

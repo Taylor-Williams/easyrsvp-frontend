@@ -1,8 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {deleteReservation} from '../actions/deleteReservation'
 
 const Reservations = (props) => {
-    const handleDelete = () => {
-        
+
+    const handleDelete = (reservation) => {
+        console.log(reservation, reservation.id, reservation.venue_id)
+        props.deleteReservation(reservation.id, reservation.venue_id)
     }
 
     return (
@@ -11,10 +15,10 @@ const Reservations = (props) => {
             <br></br>
             {props.reservations && props.reservations.map(reservation => 
                 <ul key={reservation.id}>
-                    <li>{reservation.res_name} {reservation.phone_number} <button onClick={handleDelete}>Delete</button></li>
+                    <li>{reservation.res_name} {reservation.phone_number} <button onClick={() => handleDelete(reservation)}>Delete</button></li>
                 </ul>
             )}
         </div>
     )
 }
-export default Reservations
+export default connect(null, {deleteReservation})(Reservations)
