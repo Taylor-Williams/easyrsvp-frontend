@@ -2,16 +2,14 @@ import React from 'react'
 import ReservationsInput from '../components/ReservationsInput'
 import Reservations from '../components/Reservations'
 
-class ReservationsContainer extends React.Component {
+const ReservationsContainer = (props) => {
 
-    render() {
-        return (
-            <div>
-                <Reservations reservations={this.props.venue && this.props.venue, this.props.venue.reservations}/>
-                <ReservationsInput venue={this.props.venue}/>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <Reservations reservations={props.venue && props.venue, props.venue.reservations}/>
+            <ReservationsInput venue={props.venue}/>
+        </div>
+    )
 
 }
 export default ReservationsContainer

@@ -5,6 +5,7 @@ import Venues from '../components/Venues'
 import Venue from '../components/Venue'
 import VenueInput from '../components/VenueInput'
 import {Route, Switch} from 'react-router-dom'
+import VenueWelcome from '../components/VenueWelcome'
 
 class VenuesContainer extends React.Component {
 
@@ -19,6 +20,7 @@ class VenuesContainer extends React.Component {
                     <Route path='/venues/new' component={VenueInput} />
                     <Route path='/venues/:id' render={(routerProps) => <Venue {...routerProps} venues={this.props.venues}/> } />
                     <Route path='/venues' render={(routerProps) => <Venues {...routerProps} venues={this.props.venues}/> } />
+                    <Route exact path='/' component={VenueWelcome} />
                 </Switch>
             </div>
         )
